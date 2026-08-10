@@ -6,4 +6,5 @@ class Solution:
             complement = target - nums[i]
             if complement in map:
                 return [map[complement], i]
-            map[nums[i]] = i
+            else:
+                map[nums[i]] = i
