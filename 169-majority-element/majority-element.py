@@ -15,6 +15,6 @@ class Solution:
         for i in range(n):
             if(nums[i] == element):
                 count1 += 1
-        if(count1 > int(n/2)):
+        if(count1 > n/2):
             return element
         return -1
