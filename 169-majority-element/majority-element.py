@@ -8,6 +8,6 @@ class Solution:
             else:
                 hashmap[nums[i]] = 1
         for num in hashmap:
-            if(hashmap[num] > n/2):
+            if(hashmap[num] > int(n/2)):
                 return num
         return -1
