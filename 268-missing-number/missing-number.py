@@ -1,11 +1,13 @@
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
         n = len(nums)
-        i = 0
+        l = [0] * (n+1)
 
-        while(i <= n):
-            if i not in nums:
+        for i in range(n):
+            l[nums[i]] = 1
+        
+        for i in range(n+1):
+            if(l[i] == 0):
                 return i
-            i += 1
         else:
             return 0
