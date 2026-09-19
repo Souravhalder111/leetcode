@@ -2,6 +2,7 @@ class Solution:
     def addBinary(self, a: str, b: str) -> str:
         if(a == b == "0"):
             return "0"
+            
         n1 = len(a)
         n2 = len(b)
         num1 = 0
