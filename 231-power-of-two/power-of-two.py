@@ -3,7 +3,8 @@ class Solution:
         if(n <= 0):
             return False
         
-        while(n % 2 == 0):
-            n /= 2
+        if(n & (n-1) == 0):
+            return True
         
-        return n == 1
+        else:
+            return False
