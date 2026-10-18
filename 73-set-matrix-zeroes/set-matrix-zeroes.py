@@ -5,6 +5,7 @@ class Solution:
         """
         n = len(matrix)
         m = len(matrix[0])
+        
         row = [0] * n
         col = [0] * m
 
