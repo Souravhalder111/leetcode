@@ -16,7 +16,7 @@ class Solution:
 
         for i in range(n):
             for j in range(m):
-                if(row[i] or col[j]):
+                if(row[i] == 1 or col[j] == 1):
                     matrix[i][j] = 0
 
         return matrix
