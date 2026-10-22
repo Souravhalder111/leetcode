@@ -3,18 +3,25 @@ class Solution:
         if(len(ransomNote) > len(magazine)):
             return False
         
-        hashset = [0] * 26
+        array = [0] * 26
 
-        for i in range(len(ransomNote)):
-            if(hashset[ord(ransomNote[i]) - 97] != 0):
-                hashset[ord(ransomNote[i]) - 97] += 1
+        n = len(ransomNote)
+        m = len(magazine)
+
+        for i in range(n):
+            char_1 = ransomNote[i]
+
+            if(array[ord(char_1) - 97] != 0):
+                array[ord(char_1) - 97] += 1
             else:
-                hashset[ord(ransomNote[i]) - 97] = 1
+                array[ord(char_1) - 97] = 1
         
-        for i in range(len(magazine)):
-            hashset[ord(magazine[i]) - 97] -= 1
+        for i in range(m):
+            char_2 = magazine[i]
+
+            array[ord(char_2) - 97] -= 1
         
-        for num in hashset:
+        for num in array:
             if(num > 0):
                 return False
         
