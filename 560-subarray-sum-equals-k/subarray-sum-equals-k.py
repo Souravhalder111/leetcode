@@ -1,20 +1,21 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        prefix_sum = 0
+        n = len(nums)
+        hashMap = {0 : 1}
+        
+        prefixSum = 0
         count = 0
-        freq = {0: 1}
 
-        for num in nums:
-            prefix_sum += num
+        for i in range(n):
+            prefixSum += nums[i]
+            opposite = prefixSum - k
 
-            rem = prefix_sum - k
+            if opposite in hashMap:
+                count += hashMap[opposite]
 
-            if rem in freq:
-                count += freq[rem]
-
-            if prefix_sum in freq:
-                freq[prefix_sum] += 1
+            if prefixSum in hashMap:
+                hashMap[prefixSum] += 1
             else:
-                freq[prefix_sum] = 1
-
+                hashMap[prefixSum] = 1
+        
         return count
