@@ -1,18 +1,18 @@
 class Solution:
     def sortArrayByParityII(self, nums: list[int]) -> list[int]:
         n = len(nums)
-        result = [0] * n
-        k = 0
-        l = 1
+        i = 0
+        j = 1
 
-        for i in range(n):
+        while(i < n and j < n):
+            
             if(nums[i] % 2 == 0):
-                result[k] = nums[i]
-                k += 2
-                
-        for i in range(n):
-            if(nums[i] % 2 != 0):
-                result[l] = nums[i]
-                l += 2
+                i += 2
+            
+            if(nums[j] % 2 != 0):
+                j += 2
+            
+            else:
+                nums[i], nums[j] = nums[j], nums[i]
         
-        return result
+        return nums
