@@ -1,17 +1,14 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         n = len(s)
-        frequency_hashMap = {}
+        freq = {}
 
-        for i in range(n):
-            
-            if s[i] in frequency_hashMap:
-                frequency_hashMap[s[i]] += 1
-            else:
-                frequency_hashMap[s[i]] = 1
+        for char in s:
+            freq[char] = freq.get(char, 0) + 1
         
         for i in range(n):
-            if(frequency_hashMap[s[i]] == 1):
+            
+            if(freq[s[i]] == 1):
                 return i
         
         return -1
