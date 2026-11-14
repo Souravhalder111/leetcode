@@ -9,7 +9,5 @@ class Solution:
         for i in range(mini, maxi):
             if i not in seen:
                 result.append(i)
-            else:
-                continue
         
         return result
