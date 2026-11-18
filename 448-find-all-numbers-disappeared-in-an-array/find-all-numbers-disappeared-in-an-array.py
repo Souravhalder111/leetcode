@@ -1,19 +1,18 @@
 class Solution:
     def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
         n = len(nums)
-        hashArray = [0] * (n+1)
-        result =  []
+        seen = set()
 
         for num in nums:
-
-            if(hashArray[num] > 0):
-                hashArray[num] += 1
+            if num not in seen:
+                seen.add(num)
             else:
-                hashArray[num] = 1
-            
+                continue
+        
+        result = []
+        
         for i in range(1, n+1):
-            
-            if(hashArray[i] == 0):
+            if i not in seen:
                 result.append(i)
         
         return result
