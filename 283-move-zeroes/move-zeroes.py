@@ -4,8 +4,8 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        i = 0
-        j = 0
+        i = 0            # Traverse the whole array
+        j = 0            # Find the non-zero element
 
         while(i < n):
             if(nums[i] != 0):
