@@ -4,7 +4,15 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         n = len(s)
-        copied_string = s.copy()
-        for i in range(n-1, -1, -1):
-            s[n-i-1] = copied_string[i]
+
+        left = 0
+        right = n-1
+
+        while(left < right):
+            
+            s[left], s[right] = s[right], s[left]     # Swap the elements
+
+            left += 1                                 # Increment the first pointer
+            right -= 1                                # Decrement the last pointer
+        
         return s
